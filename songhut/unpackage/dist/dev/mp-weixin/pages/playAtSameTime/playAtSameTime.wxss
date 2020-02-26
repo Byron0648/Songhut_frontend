@@ -1,0 +1,58 @@
+
+.info {
+	margin: 30rpx;
+	border-radius: 30rpx;
+	width: 100%;
+}
+.iconbtn {
+	margin-top: 8rpx;
+	width: 50rpx;
+	height: 50rpx;
+}
+.audio-wrapper {
+	background-color: #FFFFFF;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	border-radius: 15rpx;
+}
+.audio-number {
+	font-size: 24rpx;
+	line-height: 1;
+	color: #000000;
+	margin-right: 15rpx;
+}
+.audio-slider {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	margin: 0 20rpx;
+}
+.form-wrapper{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	margin-top: 100rpx;
+	margin-left: 50rpx;
+	margin-right: 50rpx;
+}
+.form-textarea{
+	margin-left: 40rpx;
+	background-color: #FFFFFF;
+	width: 400rpx;
+}
+.form-btn{
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	width: 200rpx;
+	font-size: 34rpx;
+	margin: 0 auto;
+}
+
