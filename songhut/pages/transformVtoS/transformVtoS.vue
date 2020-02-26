@@ -194,15 +194,17 @@
 			//以上为待修改内容
 			uploadMelody(){
 				console.log("开始上传")
+				console.log(this.filePath)
 				uni.uploadFile({
-					url: host + '/uploadFileToRepository',
-					name:'melody',
+					url: host + '/file/uploadFileToRepository',
+					name:'uploadFile',
 					filePath:this.filePath,
 					fileType:'audio',
 					formData:{
 						fileName:"测试",
 						fileType:1,
 						introduce:"this is a test",
+						repositoryId:1,
 						isPublic:true
 					},
 					success(res){
