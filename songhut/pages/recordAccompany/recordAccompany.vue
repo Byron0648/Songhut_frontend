@@ -41,7 +41,7 @@
 			            <view class="page-body-button" @click="playVoice">
 			                <image src="../../static/play.png"></image>
 			            </view>
-			            <view class="page-body-button" @click="navToTransformVtoS">
+			            <view class="page-body-button" @click="save">
 			                <image src="../../static/finished.png"></image>
 			            </view>
 			        </view>
@@ -58,14 +58,13 @@
 						<view class="page-body-button" @click="stopVoice">
 						    <image src="../../static/stop.png"></image>
 						</view>
-						<view class="page-body-button" @click="navToTransformVtoS">
+						<view class="page-body-button" @click="save">
 						    <image src="../../static/finished.png"></image>
 						</view>
 			        </view>
 			    </block>
 			</view>
-		</view>
-        
+		</view>     
     </view>
 </template>
 <script>
@@ -77,6 +76,7 @@
     var recordTimeInterval = null;
     var recorderManager = null;
     var music = null;
+	var host = getApp().globalData.host;
     export default {
         data() {
             return {
@@ -173,12 +173,16 @@
                 this.end();
             },
 			save(){
+				var that = this
 				console.log(this.tempFilePath)
 				uni.saveFile({
 					tempFilePath:this.tempFilePath,
 					//tempFilePath:music.src,
 					success(res) {
 						console.log(res)
+						uni.navigateTo({
+							url:"../transformVtoS/transformVtoS?savedFilePath="+res.savedFilePath
+						})
 					}
 				})
 			}
@@ -217,12 +221,6 @@
 			addLyrics(){
 				
 			},
-			//跳转到transformVtoS
-			navToTransformVtoS(){
-				uni.navigateTo({
-					url:'../transformVtoS/transformVtoS?tempFilePath=' + this.tempFilePath
-				})
-			}
         },
 		
     }

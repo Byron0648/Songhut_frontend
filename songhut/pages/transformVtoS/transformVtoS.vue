@@ -39,13 +39,14 @@
 		</view>
 		
 		<view class="form-wrapper">
-			<button class="cu-btn round form-btn bg-button" @click="navToChooseTransform">保存</button>
+			<button class="cu-btn round form-btn bg-button" @click="uploadMelody">保存</button>
 		</view>
 	</view>
 </template>
 
 <script>
-	let bgAudioMannager = ''
+	var host = getApp().globalData.host;
+	let bgAudioMannager = '';
 	export default {
 		data() {
 			return {
@@ -78,9 +79,10 @@
 			}
 		},
 		onLoad(options) {
+			
 			bgAudioMannager = uni.getBackgroundAudioManager();
-			//console.log(options)
-			//this.tempFilePath = options.tempFilePath;
+			this.filePath = options.savedFilePath
+			console.log(this.filePath)
 		},
 		computed: {
 			'nowtime': function() {
@@ -190,9 +192,29 @@
 				that.playState = 1
 			},
 			//以上为待修改内容
-			navToChooseTransform(){
-				uni.navigateTo({
-					url:"../chooseTransform/chooseTransform?url=" + this.tempFilePath
+			uploadMelody(){
+				console.log("开始上传")
+				uni.uploadFile({
+					url: host + '/uploadFileToRepository',
+					name:'melody',
+					filePath:this.filePath,
+					fileType:'audio',
+					formData:{
+						fileName:"测试",
+						fileType:1,
+						introduce:"this is a test",
+						isPublic:true
+					},
+					success(res){
+						console.log(res)
+						uni.showModal({
+							content:res
+						})
+						//TODO
+					},
+					fail(err){
+						console.log(err)
+					}
 				})
 			}
 		}

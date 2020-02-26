@@ -10,6 +10,7 @@
 				<button type="default" plain="true" @tap="navToPlaySameTime">同时播放</button>
 				<button type="default" plain="true" @tap="navToShowLibrary">我的乐库</button>
 				<button type="default" plain="true" @tap="navToDetaillnfor">共享库</button>
+				
             </view>
         </view>
     </view>

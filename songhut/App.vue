@@ -1,6 +1,7 @@
 <script>
 	export default {
 		globalData: {  
+			host:"116.62.170.221",
 		    instrumentList:[
 		    	{
 		    		id:1,
