@@ -1,1 +1,0 @@
-<view><button data-event-opts="{{[['tap',[['play',['$event']]]]]}}" bindtap="__e">播放</button><view>{{nowtime}}</view><view>{{nowtime1}}</view><button data-event-opts="{{[['tap',[['stop',['$event']]]]]}}" bindtap="__e">暂停</button></view>

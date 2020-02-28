@@ -202,10 +202,10 @@
 					fileType:'audio',
 					formData:{
 						fileName:"测试",
-						fileType:1,
+						fileType:"1",
 						introduce:"this is a test",
-						repositoryId:1,
-						isPublic:true
+						repositoryId:"1",
+						isPublic:"0"
 					},
 					success(res){
 						console.log(res)

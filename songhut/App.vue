@@ -1,7 +1,7 @@
 <script>
 	export default {
 		globalData: {  
-			host:"116.62.170.221",
+			host:"http://116.62.170.221:8080/songhut",
 		    instrumentList:[
 		    	{
 		    		id:1,
